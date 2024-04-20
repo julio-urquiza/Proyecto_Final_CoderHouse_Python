@@ -1,0 +1,5 @@
+-python manage.py check AppCoder
+-python manage.py makemigrations --se crea un nuevo archivo en migrations 
+-python manage.py sqlmigrate AppCoder 0001 -- dejando disponible todo para la base de datos 
+-python manage.py migrate -- modifica los archivos las estructuras de la base de datos  
+-python manage.py createsuperuser -- crea un nuevo usuarioi

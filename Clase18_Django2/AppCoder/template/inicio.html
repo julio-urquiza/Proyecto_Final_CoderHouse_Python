@@ -1,0 +1,28 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+
+    <h2>Bienvenido {{usuario}}</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <img src="{{ url }}"/>
+                    <div class="card-body">
+                        <h5 class="card-title">{{usuario}}</h5>
+                        <p class="card-text">Me gusta mucho el curso</p>
+                        <a class="btn btn-danger" href="">Enviar mensaje</a>
+                        <form action="{% url 'Logout' %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Logout</button>
+                        </form>
+                        <a href="{% url 'EditarPerfil' %}" class="btn btn-warning">Editar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+{% endblock %}

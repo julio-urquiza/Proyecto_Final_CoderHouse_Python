@@ -1,0 +1,91 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+    <main class="container">
+        <h1 class="text-center">Alumnos</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>legajo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for n in alumnos %}
+                <tr>
+                    <td>{{n.id}}</td>
+                    <td>{{n.nombre}}</td>
+                    <td>{{n.legajo}}</td>
+                    {% if request.user.is_authenticated %}
+                        <td><a href="{% url 'eliminar_alumno' n.id %}" class="btn btn-primary">Borrar</a></td>
+                        <td><a href="{% url 'editar_alumno' n.id %}" class="btn btn-primary">Editar</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if request.user.is_authenticated %}
+            <a class="btn btn-primary" href="{% url 'alta_alumno' %}">Registrar un alumno</a>
+            <a class="btn btn-primary" href="{% url 'buscar_alumno' %}">Buscar un alumno</a>
+        {% endif %}
+    </main>
+
+    <!--
+        <main>
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <img src="{% static 'AppCoder\assets\img\testimonials-2.jpg' %}"/>
+                            <div class="card-body">
+                                <h5 class="card-title">Ramon Perez</h5>
+                                <p class="card-text">Me gusta mucho el curso</p>
+                                <a class="btn btn-danger" href="">Enviar mensaje</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <img src="{% static 'AppCoder\assets\img\testimonials-2.jpg' %}"/>
+                            <div class="card-body">
+                                <h5 class="card-title">Ramon Perez</h5>
+                                <p class="card-text">Me gusta mucho el curso</p>
+                                <a class="btn btn-danger" href="">Enviar mensaje</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="row">
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <img src="{% static 'AppCoder\assets\img\testimonials-2.jpg' %}"/>
+                            <div class="card-body">
+                                <h5 class="card-title">Ramon Perez</h5>
+                                <p class="card-text">Me gusta mucho el curso</p>
+                                <a class="btn btn-danger" href="">Enviar mensaje</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-6">
+                        <div class="card">
+                            <img src="{% static 'AppCoder\assets\img\testimonials-2.jpg' %}"/>
+                            <div class="card-body">
+                                <h5 class="card-title">Ramon Perez</h5>
+                                <p class="card-text">Me gusta mucho el curso</p>
+                                <a class="btn btn-danger" href="">Enviar mensaje</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+    -->
+
+{% endblock %}
