@@ -1,0 +1,14 @@
+{% extends "padre.html" %}
+{% load static %}
+{% block contenido %}
+
+    <div class="container-fluid">
+
+        <h2>{{ mensaje }}</h2>
+        <h2>Vuelva a logearse para continuar</h2>
+
+        <a href="{% url 'Login' %}" class="btn btn-primary" >Ingresar</a>
+
+    </div>
+
+{% endblock %}
