@@ -5,5 +5,5 @@ Video Demostracion: https://drive.google.com/file/d/1YfajbH99CLgN5WnFJS9tclP1C95
 
 SuperUsuario: admin - contraseña: coder
 
-usuario: prueba - contraseña: coder123
+usuario: prueba - contraseña: coder1234
 
